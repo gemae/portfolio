@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="style/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    
+<div class="bg-fixed">
+
+</div>
+    <header class="home" id="homeId">
+        <nav class="main-nav" id="mainnav">
+            <div class="logo"><img src="style/logo.png" alt=""></div>
+            <ul class="main-list">
+                <li class="home"><a href="#homeId" class="active-main-nav">Home</a></li>
+                <li class="about"><a href="#aboutId">About</a></li>
+                <li class="works"><a href="#worksId">Works</a></li>
+                <li class="cont"><a href="#contactId">Contact</a></li>
+            </ul>
+
+        </nav>
+        <div class="home-wrap">
+
+        <div class="caption-wrap">
+
+            <div class="header-name">
+                <h1>gemae</h1><h3>batislaong</h3>
+            </div>
+
+            <div class="header-caption">
+                <span class="text1">Aspiring</span><span class="text-animation"></span>
+            </div>
+            <div class="contact-wrap">
+                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-google"></i></a>
+            </div>
+        </div>
+
+        </div> 
+    </header>
+
+    <section class="about-me section" id="aboutId">
+      
+        <h1 class="sliders">About Me</h1>
+        <section class="about-wrapper fade">
+            <div class="slide-cont">
+                <div class="slide-wrap">
+                    <div class="slide">
+                        <h3>WHO</h3>
+                        <span>Gemae Batislaong</span>
+                    </div>
+                    <div class="slide">
+                        <h3>WHAT</h3>
+                        <span>Web Developer/Front-end Web Developer</span>
+                    </div>
+                    <div class="slide">
+                        <h3>WHERE</h3>
+                        <span>Davao city</span>
+                    </div>
+                    <div class="slide"> 
+                        <h3>WHY</h3>
+                        <span>Passion</span>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="slideBtn-wrapper">
+                <label for="" class="btn"></label>
+                <label for="" class="btn"></label>
+                <label for="" class="btn"></label>
+                <label for="" class="btn"></label>
+            </div>
+        </section>
+        <p class="quote fade">"It's never too late to be what you might have been."</p>
+        <div class="about-container"> 
+            <article class="article-wrap sliders">
+               
+                <div>
+                <span>a self tought and motivated aspiring web developer, I enjoy coding and accept any challenges. 
+                    After i graduated, i became focused on helpling my uncle's company, 
+                    for that reason i left my passion behind, now i am determined to get back 
+                    in industry where i belong, and the career i certainly want to have.
+                </span>
+                <span>Interested in role with a company promoting best practices, offering diverse customer projects, and where i can develop my skills and learn new things.</span>
+              </div>
+            </article>
+            <section class="skills sliders">
+                <h2>Skills</h2>
+                <div class="skills-wrap">
+                    <span class="html flexgrow" onclick="skillsFlex('0','80%');">
+                        <h4>HTML</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <span class="css" onclick="skillsFlex('1','85%');">
+                        <h4>CSS</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <span class="sass" onclick="skillsFlex('2','40%');">
+                        <h4>SASS</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <span class="bootstrap" onclick="skillsFlex('3','50%');">
+                        <h4>BOOTSTRAP</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <span class="javascript" onclick="skillsFlex('4','75%');">
+                        <h4>JAVASCRIPT</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <span class="jquery" onclick="skillsFlex('5','30%');">
+                        <h4>JQUERY</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <span class="react" onclick="skillsFlex('6','70%');">
+                        <h4>REACT JS</h4>
+                        <div class="progress"></div>
+                    </span>
+                    <!--<img src="img/html5.svg" alt="">
+                    <img src="img/css.png" alt="">
+                    <img src="img/sass.png" alt="">
+                    <img src="img/js.png" alt="">
+                    <img src="img/bootsrap.png" alt="">
+                    <img src="img/jquery.png" alt="">
+                    <img src="img/reactjs.png" alt="">-->
+
+                </div>
+            </section>
+        </div>
+        <span class="design-logo sliders" >G</span>
+    </section>
+
+    <section class="portfolio section" id="worksId">
+        <h1 class="sliders">Portfolio</h1>
+       <nav>
+           <ul class="portfolio-list fade">
+               <li class="active" onclick="works(0)">All</li>
+               <li onclick="works(1)">Web Design</li>
+               <li onclick="works(2)">Android App</li>
+           </ul>
+       </nav>
+       <div class="works-wrap" id="wrap">
+            <div class="works-tile web" id="one">
+                <div class="tile t1 sliders">
+                    <img src="img/work1.jpg" alt="">
+                </div>
+                <p>Landing-Page</p>
+            </div>
+            <div  class="works-tile web" id="two">
+                <div class="tile t2 sliders">
+                    <img src="img/work2.jpg" alt="">
+                </div>
+                <p>DevBloom</p>
+            </div>
+            <div  class="works-tile web" id="three">
+                <div class="tile t3 sliders">
+                    <img src="img/work3.jpg" alt="">
+                </div>
+                <p>Publi-like twitter</p>
+            </div>
+            <div class="works-tile web" id="four">
+                <div class="tile t4 sliders">
+                    <img src="img/work4.jpg" alt="">
+                </div>
+                <p>WegIde</p>
+            </div>
+            <div  class="works-tile app" id="five">
+                <div class="tile t5 sliders">
+                    <img src="img/work5.jpg" alt="">
+                </div>
+                <p>E-Learning App</p>
+            </div>
+       </div>
+    </section>
+    <section class="email">
+        <h1 class="sliders">Contact</h1>
+        <form action="">
+            <label for="mail">Email</label>
+            <input type="email" id="mail" name="email" placeholder="Your email..." required>
+            
+            <label for="subj">Subject</label>
+            <input type="text" id="subj" name="subject" placeholder="Write Something...">
+
+            <label for="mes">Message</label>
+            <textarea name="message" id="mes" placeholder="Your message here..." required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <footer class="contact section" id="contactId">
+        <div class="logo"><img src="style/logo.png" alt=""></div>
+        <div class="contact-wrapper">
+            <h2>Get in touch</h2>
+            
+        </div>
+        <label for="">site by GEMAE BATISLAONG</label>
+    </footer>
+ <script src="main.js"></script>   
+</body>
+</html>

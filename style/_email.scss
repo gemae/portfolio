@@ -1,0 +1,75 @@
+.email{
+    width: 100%;
+    padding: 5rem 2rem;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.email h1{
+    margin-bottom: 3rem;
+    font-size: 3em;
+    color: $mainFont;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.email .appear{
+    transform: translateX(0px);
+    transition: 600ms ease-in-out;
+    transition-property: transform, opacity;
+    opacity: 1;
+}
+
+.email form *{
+   display: block;
+   
+}
+form{
+    width: 600px;  
+    margin: 0 auto;
+}
+form input[type=email], input[type=text], textarea{
+     width: 100%;
+    padding: .5rem;
+    box-sizing: border-box;
+}
+form input,textarea{
+    margin: .5rem 0rem 1rem 0rem;
+}
+form textarea{
+    height: 150px;
+    width: 100%;
+}
+form input[type=submit]{
+    padding: .4rem 1.3rem;
+    background-color: $mainFont;
+    color: $coffee;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+form input[type=submit]:hover{
+   background-color:$coffee;
+   color: white;
+  
+}
+
+
+@media screen and(max-width: 700px){
+   
+   
+    form{
+        width: 100%;  
+        margin: 0 auto;
+    }
+}
+
+@media screen and(max-width: 400px){
+   
+    .email h1{
+        text-align: center;
+    }
+}

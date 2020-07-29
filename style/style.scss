@@ -1,0 +1,50 @@
+@import './variables';
+@import './header';
+@import './about';
+@import './works';
+@import './contact';
+@import './email';
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body,html{
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway';
+    position: relative;
+    overflow-x: hidden;
+}
+.bg-fixed{
+    position: absolute;
+    top: 0;
+    z-index: -100;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(54, 54, 54,0.8)), url('pic/bg5.jpg');
+    background-size: 100% 100%;  
+    position: fixed; 
+}
+.modal{
+    position: absolute;
+    padding: 1em;
+    //left: 0;
+   // transform: translateY(0%);
+    background: rgba(0, 0, 0, 0.178);
+    z-index: 100;
+}
+.modal img{
+    position: relative;
+    width: 208px;
+    height: 180px;
+  
+}
+
+@media screen and (max-width: 654px){
+    .bg-fixed{
+       background-size: 130% 100%;  
+    }
+}

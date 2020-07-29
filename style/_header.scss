@@ -1,0 +1,284 @@
+header{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: $mainFont;
+    --bg:rgb(54, 54, 54);
+    --link: #BF9F73;
+}
+.home{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center;
+        box-shadow: 2px 1px 5px var(--bg);
+        box-sizing: border-box;
+        z-index: 100;
+        width: 100%;
+        background-color: var(--bg);
+        transition: 400ms;
+        padding: .6rem 0;
+        
+        .logo{
+            margin-bottom: 1rem;
+        }
+        .logo img{
+           
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    ul{
+      
+        box-sizing: border-box;
+        
+        
+    }
+     ul li{
+        
+        display: inline;
+        margin: 0 .5rem;
+        padding: .4rem;
+        box-sizing: border-box;
+        cursor: pointer;
+        border-radius: 20px;
+        border: 1px solid transparent;
+     
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--link);
+            transition: 400ms;
+            
+        }
+           
+    }   
+}
+
+}
+.main-list li:hover{
+    background-color: var(--bg);
+    box-shadow: -2px -2px 3px rgba(255,255,255,0.5),
+        2px 2px 3px rgba(70,70,70,0.12),inset -2px -2px 3px rgba(255,255,255,0.5),
+        inset 2px 2px 3px rgba(70,70,70,0.12) ;
+}
+.newScrolled{
+    transition: 400ms;
+    --bg:#BF9F73;
+    --link: rgb(54, 54, 54);
+      //display: flex!important;
+}
+//--bg:rgb(54, 54, 54);
+//--link: #BF9F73;
+.active-main-nav{
+    color: white!important;
+    transition: 300ms;
+}
+.home-wrap{
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.caption-wrap{
+        
+    text-transform: uppercase;
+    font-size: 12px;
+
+    .header-name{
+        text-align: center;
+        margin: 1rem 0;
+        h1{
+            font-size: 6.5em;
+            transform: scale( 1.5, 1.6 );
+            color: $mainFont;
+            padding-bottom: .5rem;
+            letter-spacing: 5px;
+            font-weight: bolder;
+            background-image: linear-gradient(-90deg, rgb(196, 157, 102),rgb(252, 230, 199), rgb(196, 157, 102));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 200%;
+            animation: nameani infinite 5000ms ease-in-out;
+            animation-fill-mode: forwards;
+           
+        }
+        h3{
+            font-size: 1.5em;
+            color: $mainFont;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .header-caption{
+        box-sizing: border-box;
+        width: fit-content;
+        padding: 0 2.5em;
+        position: relative;
+        left: -15%;
+        transform: translateX(25%);
+        
+        .text1{
+            font-size: 1.5em;
+            &::after{
+                content: "";
+                position: absolute;
+                top: -2px;
+                 left: 9ch;
+                white-space: nowrap;
+                font-size: 1.2em;
+                display: inline-block;
+                animation: animations infinite 5000ms;
+                animation-fill-mode: forwards;
+                color:rgb(223, 188, 140);
+                font-weight: 800;
+                //animation-delay: calc(0.2s * var(--y));
+                transition: 500ms;
+                
+            }
+        
+        }
+        
+    }
+}
+.contact-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.contact-wrap a *{
+    display: block;
+}
+.contact-wrap a{
+    width: 2.4rem;
+    height: 2.4rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 .3rem;
+    border: 1.5px solid $coffee;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.5px;
+    background-color: $mainFont;
+}
+.contact-wrap a i{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    background-image: linear-gradient(to right, rgb(252, 230, 199), #BF9F73 60%, rgb(252, 230, 199));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+}
+.contact-wrap a i:hover{
+    transition: 500ms;
+    background-position:right;
+
+}
+.contact-wrap label{
+    font-size: .6rem;
+    padding-top: .3rem;
+    background-image: linear-gradient(to right, rgb(252, 230, 199), #BF9F73 50%, rgb(252, 230, 199));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+
+    
+}
+@keyframes nameani{
+    0%,20%{
+      
+        background-position: left;
+    }
+    30%,40%{
+        
+        background-position: right;
+    }
+    50%,60%{
+        background-position: left;
+    }
+    70%,100%{
+        
+        background-position: -90deg;
+    }
+}
+@keyframes animations{
+    0%,50%{
+        content: "Web Developer";
+     
+     }
+    60%,100%{
+        content: "Programmer";
+        
+    }
+}
+@media screen and (min-width: 654px){
+ 
+   .main-nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 4rem;
+        margin-top: 0;
+        box-sizing: border-box;
+        padding: 1rem 2rem!important;
+       ul{
+          
+            margin: 0;
+            li{
+                padding: .5rem!important;
+            }
+
+            
+        }
+        .logo{
+            margin-bottom: 0!important;
+        }
+        .logo img{
+         
+            margin-top: 0;
+            width: 3rem!important;
+            height: 3rem!important;
+        }
+ }
+}
+
+@media screen and (max-width: 750px){
+    .caption-wrap{
+        font-size: 10px;
+    }
+    .contact-wrap a{
+        width: 2rem;
+        height: 2rem;
+    }
+    .contact-wrap a i{
+        font-size: 3em;
+      
+    }
+
+}
+@media screen and (max-width: 450px){
+    header{
+        font-size: 13px;
+    }
+   .header-name h1{
+       font-size: 4em!important;
+       letter-spacing: 1px!important;
+   }
+   .header-caption{
+    left: -50%!important;
+    transform: translateX(50%)!important;
+   }
+}

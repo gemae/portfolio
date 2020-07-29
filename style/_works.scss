@@ -1,0 +1,127 @@
+.portfolio{
+    
+    padding: 12rem 3rem 3rem 3rem;
+    color: $mainFont;
+    
+    //background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.6), rgba(117, 19, 93, 0.9));
+}
+.portfolio h1{
+    font-size: 3em;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.portfolio .appear{
+    transform: translateX(0px);
+    transition: 800ms ease-in-out;
+    transition-property: opacity, transform;
+    opacity: 1;
+}
+.portfolio nav{
+    position: relative;
+}
+.portfolio nav ul{
+    text-align: center;
+    margin: 3rem 0;
+    opacity: 0;
+   
+}
+
+.portfolio nav .appear{
+    transition: opacity 600ms ease-in-out;
+    opacity: 1;
+}
+
+.portfolio nav li{
+    display: inline-block;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+//modal
+
+.works-wrap{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    
+}
+.works-tile{
+    display: none;
+    width: 290px;
+    height: 320px;
+    text-align: center;
+    justify-self: center;
+    margin: 1em;
+    background-color: rgba(177, 125, 164, 0.02);
+    padding: 1rem;
+    box-sizing: border-box;
+    
+}
+.works-tile p{
+    padding: 1em 0;
+    color: white;
+}
+.tile{
+    height: 85%;
+    position: relative;
+    opacity: 0;
+}
+.tile img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tile img:hover{ 
+    transition: 200ms;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+
+.works-tile p{
+    height: 15%;
+    
+}
+
+.active{
+    color: white;
+    transition: 300ms;
+}
+
+@media screen and (max-width: 695px){
+    $tile: 5;
+    @for $i from 1 through $tile{
+        $addOrEven: $i % 2;
+        @if $addOrEven == 1{
+            .t#{$i}{
+                transform: translateX(100%);
+            }
+        }@else{
+            .t#{$i}{
+            transform: translateX(-100%);
+         }
+        }
+    }
+    .works-tile .appear{
+        transform: translateX(0px);
+        transition: 800ms ease-in-out;
+        transition-property: transform, opacity;
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 400px){
+    .portfolio{
+        padding: 12rem 0 6rem 0;
+        text-align: center;
+    }
+    .works-tile{
+        margin: 0;
+
+    }
+    .portfolio nav ul,.works-wrap{
+        font-size: 14px;
+        
+    }
+   
+}
