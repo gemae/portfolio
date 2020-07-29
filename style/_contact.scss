@@ -1,0 +1,59 @@
+.contact{
+    padding:3em;
+    border-top: 1px solid $secondaryColor;
+    background: $mainFont;
+    text-align: center;
+    .logo img{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.contact-wrapper{
+    margin: 1rem 0 2rem 0;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.contact-wrapper h2{
+    padding: .8rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    position: relative;
+    width: fit-content;
+    letter-spacing: 1px;
+    &::before{
+        content: "";
+        width: 2rem;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: -2rem;
+        transform: translateY(-50%);
+    }
+    &::after{
+        content: "";
+        width: 2rem;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        right: -2rem;
+        transform: translateY(-50%);
+    }
+}
+
+.contact > label{
+    letter-spacing: 1.3px;
+    color: white;
+}
+
+
+@media screen and (max-width: 400px){
+   .contact > label {
+       font-size: 13px;
+   }
+}
