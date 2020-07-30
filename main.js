@@ -259,9 +259,12 @@ entries.forEach(entry =>{
        console.log("appear");
     }
     });
-});    
+},sectionsOptions);    
 fades.forEach(fade => {
     sectionsObserver.observe(fade);
+});
+sliders.forEach(slide => {
+    sectionsObserver.observe(slide);
 });
 //Skills flex grow
 const skills =  document.querySelectorAll(".skills-wrap span");
