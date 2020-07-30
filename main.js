@@ -235,7 +235,7 @@ entries.forEach(entry =>{
         nav.style.display = "flex";
        } 
     }
-})
+});
 },sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
@@ -259,12 +259,10 @@ entries.forEach(entry =>{
        console.log("appear");
     }
     });
-    
+});    
 fades.forEach(fade => {
     sectionsObserver.observe(fade);
-})
-
-
+});
 //Skills flex grow
 const skills =  document.querySelectorAll(".skills-wrap span");
 const skillwrap = document.querySelector(".skills-wrap");
@@ -274,94 +272,3 @@ function skillsFlex(index,skill){
         skills[index].classList.add("flexgrow");
         skillwrap.style.setProperty('--skills',skill);
 }
-//Works Effect
-/*const works = document.querySelectorAll(".tile img");
-const body = document.querySelector("body");
-
-works.forEach( e =>{
-    e.addEventListener('click', () =>{
-        const modal = document.createElement("div");
-        modal.classList.add("modal");
-        body.appendChild(modal);
-        e.classList.uadd("modal-img");
-        //modal.appendChild(e);
-        //e.style.transform = "translateX(50%)";
-        e.style.transition = "1000ms";
-        
-       // this.style.transform = "";
-    });
-});*/
-/*
-const works = document.querySelectorAll(".tile");
-const body = document.querySelector("body");
-
-works.forEach( e =>{
-    e.addEventListener('click', () =>{
-        let bodyWidth = body.clientWidth;
-        let bodyHeight = window.innerHeight;
-        let scrollHeight = window.pageYOffset;
-        e.classList.remove("tile");
-        e.classList.add("modal");
-         e.style.top = scrollHeight + "px";
-        e.style.left = "0";
-        e.style.width = bodyWidth + "px"
-         e.style.height = bodyHeight + "px"
-       body.style.overflow = "hidden";
-      //  let eChild = e.childNodes;
-        
-       e.style.transition = "1000ms";
-    
-    });
-});*/
-/*const textAnimation = document.querySelector(".text-animation");
-//textAnimation.innerHTML = "Web Developer";
-
-const textArr = ["Web Developer","Programmer"];
-for(var i = 0; i < textArr.length; i++){    
-    for(var j = 0; j < textArr[i].length; j++){
-        textAnimation.style.transition = "200ms";
-        setTimeout(textAnimation.innerHTML += textArr[i].substr(j,1), 500);
-    }
-}
-var counter = 0;
-animFunc(0);
-function animFunc(num){
-    for(var j = 0; j < textArr[num].length; j++){
-       let letterCont = document.createElement("span");
-       if(textArr[num].substr(j,1) == " "){
-           letterCont.style.width = "1ch";
-       }
-       else{
-        letterCont.innerHTML = textArr[num].substr(j,1);
-       }
-       textAnimation.appendChild(letterCont);
-       letterCont.style.setProperty("--y",`${j}`);
-    }
-    setTimeout(ani,100);
-}
-var set = document.querySelectorAll(".text-animation span");
-function ani(){
-    for(var z = 0; z < set.length; z++){
-        set[z].classList.add("anim");
-        setTimeout(hideAni,4000);
-    }
-}
-
-function hideAni(){
-  set.forEach(e => {
-      e.style.visibility = "hidden";
-  });
-
-  if(counter == 0){
-    animFunc(1);
-  }
- else{
-    animFunc(0);
- }
-}
-*/
-/*set.style.animation = "animation 1000ms ease-in";
-for(var j = 1; j <= textArr[0].length; j++){
-    textAnimation.children.style.animationDelay = `${.1 * j}s`;
- }
-*/
