@@ -129,9 +129,9 @@ header {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  background-size: 200%;
-  -webkit-animation: nameani infinite 5000ms ease-in-out;
-          animation: nameani infinite 5000ms ease-in-out;
+  background-size: 260%;
+  -webkit-animation: nameani infinite 8000ms ease;
+          animation: nameani infinite 8000ms ease;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -238,31 +238,25 @@ header {
 
 @-webkit-keyframes nameani {
   0%, 20% {
-    background-position: left;
-  }
-  30%, 40% {
     background-position: right;
   }
-  50%, 60% {
+  30%, 50% {
     background-position: left;
   }
-  70%, 100% {
-    background-position: -90deg;
+  60%, 100% {
+    background-position: right;
   }
 }
 
 @keyframes nameani {
   0%, 20% {
-    background-position: left;
-  }
-  30%, 40% {
     background-position: right;
   }
-  50%, 60% {
+  30%, 50% {
     background-position: left;
   }
-  70%, 100% {
-    background-position: -90deg;
+  60%, 100% {
+    background-position: right;
   }
 }
 
@@ -677,6 +671,8 @@ header {
           box-shadow: -5px 5px 5px -5px gray;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
   cursor: pointer;
 }
 
@@ -711,8 +707,6 @@ header {
   -webkit-box-flex: 4 !important;
       -ms-flex-positive: 4 !important;
           flex-grow: 4 !important;
-  -webkit-transition: 800ms;
-  transition: 800ms;
   border-radius: 10px;
 }
 
@@ -782,6 +776,9 @@ header {
     width: 100%;
     margin: 0;
     padding: 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .about-container .skills {
     height: 50%;
@@ -968,9 +965,9 @@ header {
 }
 
 .contact {
-  padding: 3em;
+  padding: .5em;
   border-top: 1px solid rgba(250, 196, 237, 0.3);
-  background: #363636;
+  background: #BF9F73;
   text-align: center;
 }
 
@@ -980,7 +977,7 @@ header {
 }
 
 .contact-wrapper {
-  margin: 1rem 0 2rem 0;
+  margin: .5rem 0 1rem 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1025,6 +1022,11 @@ header {
   right: -2rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.contact > label {
+  letter-spacing: 1.3px;
+  color: white;
 }
 
 @media screen and (max-width: 400px) {
@@ -1079,6 +1081,7 @@ header {
 form {
   width: 600px;
   margin: 0 auto;
+  opacity: 0;
 }
 
 form input[type=email], input[type=text], textarea {

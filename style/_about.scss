@@ -239,6 +239,7 @@
     box-shadow: -5px 5px 5px -5px gray;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    transition: 500ms ease-in-out;
     cursor: pointer;
     h4{
         position: relative;
@@ -269,7 +270,6 @@
 
 .flexgrow{
     flex-grow: 4!important ;
-    transition: 800ms;
     border-radius: 10px;
     h4{
         opacity: 1!important;
@@ -329,8 +329,10 @@
             height: 50%;
             width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 0; 
+            align-items: flex-start;
         }
+    
         .skills{
             height: 50%;
             width: 100%;

@@ -102,14 +102,13 @@ header{
             padding-bottom: .5rem;
             letter-spacing: 5px;
             font-weight: bolder;
-            background-image: linear-gradient(-90deg, rgb(196, 157, 102),rgb(252, 230, 199), rgb(196, 157, 102));
+            background-image: linear-gradient(-90deg,rgb(196, 157, 102),rgb(252, 230, 199),rgb(196, 157, 102));
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            background-size: 200%;
-            animation: nameani infinite 5000ms ease-in-out;
+            background-size: 260%;
+            animation: nameani infinite 8000ms ease;
             animation-fill-mode: forwards;
-           
         }
         h3{
             font-size: 1.5em;
@@ -199,19 +198,17 @@ header{
 @keyframes nameani{
     0%,20%{
       
-        background-position: left;
-    }
-    30%,40%{
-        
         background-position: right;
     }
-    50%,60%{
+    30%,50%{
+        
         background-position: left;
     }
-    70%,100%{
-        
-        background-position: -90deg;
-    }
+    60%,100%{
+        background-position: right;
+    } 
+
+
 }
 @keyframes animations{
     0%,50%{

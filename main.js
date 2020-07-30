@@ -49,34 +49,9 @@ startSlide();
 works(0);
 
 function works(li){
-  /*  let allWork= document.querySelectorAll(".works-wrap .works-tile");
-    allWork.forEach(l =>{
-        l.style.display = 'flex';
-    });
-    let work = document.querySelector(".works-wrap");
-    let child = work.children;
-    for(e of child){
-       // if(e.style.display != "inline-block"){
-            $(document).ready(function(){
-              $(`#${e.id}`).hide("slow");
-              console.log(`#${e.id}`);
-           //e.style.display = "none";
-          // $(e).hide();
-            });
-        // }
-    }
-    let work = document.querySelectorAll(".works-wrap div");
-    work.forEach(e=>{
-        $(document).ready(function(){
-            $(`#${e.id}`).hide("slow");
-            console.log(`#${e.id}`);
-          });
-    });
-*/
     let workName = ['works-tile','web','app'];
     let openWork = document.querySelectorAll(`.${workName[li]}`);
     var closeWork;
-    //$("#wrap > div").toggle("slow");
     if(li == 0 ){
         $("#wrap > div").show("slow");
     }else{
@@ -87,15 +62,8 @@ function works(li){
             closeWork = document.querySelectorAll(`.${workName[1]}`);
         }
     openWork.forEach(el =>{
-            //  if(el.style.display == "inline-block"){
-       //     return;
-       // }
-        //else{
-       // $(`#${el.id}`).hide("slow").css("display","none");
-      
        $(`#${el.id}`).show("slow");
-       // el.style.display = "inline-block";
-        //el.style.transition = "1s";
+
     });
     closeWork.forEach(c=>{
         $(`#${c.id}`).hide("slow");
@@ -137,28 +105,29 @@ function currentNav(cur,li){
 }
 
 
-//naigation set link based on scrolled height
+/*//naigation set link based on scrolled height
 const body = document.querySelector("body");
 const home = document.querySelector(".home");
 const aboutMe = document.querySelector(".about-me");
 const work = document.querySelector(".portfolio");
-const contact = document.querySelector(".contact");
+const contact = document.querySelector(".email");
 
 
 window.onscroll = function() {
 let bodyH  = body.clientHeight;
 let homeH = home.clientHeight;
 let aboutMeH = aboutMe.clientHeight;
-let forLast = bodyH-window.innerHeight;
+let emailH = contact.clientHeight
+//let forLast = bodyH-window.innerHeight;
 let scrollHeight = window.pageYOffset;
 headH = home.clientHeight;
 
     if(scrollHeight >= homeH-60 & scrollHeight < homeH+aboutMeH){
         currentNav(cur,listNav[1]);
-    }else if(scrollHeight >= aboutMeH+homeH & scrollHeight < forLast){
+    }else if(scrollHeight >= aboutMeH+homeH & scrollHeight < aboutMeH+homeH+emailH){
         currentNav(cur,listNav[2]);
     }
-    else if(scrollHeight >= forLast){
+    else if(scrollHeight >= aboutMeH+homeH+emailH){
         currentNav(cur,listNav[3]);
     }
     else{
@@ -168,6 +137,7 @@ headH = home.clientHeight;
 };
 //Navigation intersection
 var headH = home.clientHeight;
+const body = document.querySelector("body");
 const nav = document.querySelector(".main-nav");
 const sectionTwo = document.querySelector(".about-me");
 const sectionTwoOptions = {
@@ -186,13 +156,71 @@ entries.forEach(entry =>{
 })
 },sectionTwoOptions);
 
-sectionTwoObserver.observe(sectionTwo);
+sectionTwoObserver.observe(sectionTwo);*/
 
-//home observer
+//navigation set link based on scrolled height
+const body = document.querySelector("body");
+const home = document.querySelector(".home");
+const aboutMe = document.querySelector(".about-me");
+const work = document.querySelector(".portfolio");
+const contact = document.querySelector(".email");
+const nav = document.querySelector(".main-nav");
+
+window.onscroll = function() {
+let workH  = work.clientHeight;
+let homeH = home.clientHeight;
+let aboutMeH = aboutMe.clientHeight;
+let emailH = contact.clientHeight
+//let forLast = bodyH-window.innerHeight;
+let scrollHeight = window.pageYOffset;
+headH = home.clientHeight;
+
+    if(scrollHeight >= homeH-150 & scrollHeight < homeH+aboutMeH-150){
+        currentNav(cur,listNav[1]);
+        nav.classList.add("newScrolled");
+    }else if(scrollHeight >= aboutMeH+homeH-150 & scrollHeight < aboutMeH+homeH+workH-150){
+        currentNav(cur,listNav[2]);
+        nav.classList.remove("newScrolled"); 
+    }
+    else if(scrollHeight >= workH+aboutMeH+homeH-150){
+        currentNav(cur,listNav[3]);
+        nav.classList.add("newScrolled");
+    }
+    else{
+        currentNav(cur,listNav[0]);
+        nav.classList.remove("newScrolled"); 
+    }
+ 
+};
+//observer for main containers
+/*
+const containers = document.querySelectorAll(".container");
+var windowH = window.innerHeight;
+const containersOptions = {
+    rootMargin: `0px 0px -${windowH-100}px 0px`
+
+};
+const containerObserver = new IntersectionObserver((entries,cotainerObserver) => {
+    
+    entries.forEach(entry =>{
+       if(!entry.isIntersecting){
+        nav.classList.remove("newScrolled"); 
+       }else{
+        nav.classList.add("newScrolled");
+       }
+    });
+    
+},containersOptions);
+
+containers.forEach(container => {
+    containerObserver.observe(container);
+});
+*/
+//home observer hiding navaigation
 const sectionOne = document.querySelector(".home");
 const sectionOneOptions = {
 
-    threshold: 0.5
+    threshold: 0.75
 };
 const sectionOneObserver = new IntersectionObserver((entries,sectionOneObserver) => {
 entries.forEach(entry =>{
@@ -218,7 +246,7 @@ const sliders = document.querySelectorAll(".sliders");
 const fades = document.querySelectorAll(".fade");
 const sectionsOptions = {
 
-    rootMargin: "0px 0px -130px 0px"
+    rootMargin: "0px 0px -250px 0px"
     
 };
 const sectionsObserver = new IntersectionObserver((entries,sectionsObserver) => {
@@ -230,12 +258,8 @@ entries.forEach(entry =>{
        sectionsObserver.unobserve(entry.target);
        console.log("appear");
     }
-});
-},sectionsOptions);
-
-sliders.forEach(slide => {
-    sectionsObserver.observe(slide);
-})
+    });
+    
 fades.forEach(fade => {
     sectionsObserver.observe(fade);
 })

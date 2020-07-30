@@ -1,7 +1,7 @@
 .contact{
-    padding:3em;
+    padding:.5em;
     border-top: 1px solid $secondaryColor;
-    background: $mainFont;
+    background: $coffee;
     text-align: center;
     .logo img{
         width: 3rem;
@@ -10,7 +10,7 @@
 }
 
 .contact-wrapper{
-    margin: 1rem 0 2rem 0;
+    margin: .5rem 0 1rem 0;
     width: fit-content;
     position: relative;
     left: 50%;
