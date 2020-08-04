@@ -14,6 +14,19 @@
 <div class="bg-fixed">
 
 </div>
+<div class="modal">
+    <div class="modal-wrap">
+        <div class="project-wrap">
+            <img src="img/bg2.jpg" alt="" class="project-image">
+            <label for="" class="prev"><img src="img/prev.png" alt=""></label>
+            <label for="" class="next"><img src="img/next.png" alt=""></label>
+        </div>
+        <div class="link-wrap" id="tool">
+            <a href="" class="link">Open project in new tab</a>
+        <ul class="project-script" id="toolList"></ul>
+        </div> 
+    </div>
+</div>
     <header class="home" id="homeId">
         <nav class="main-nav" id="mainnav">
             <div class="logo"><img src="style/logo.png" alt=""></div>
@@ -37,10 +50,10 @@
                 <span class="text1">Aspiring</span><span class="text-animation"></span>
             </div>
             <div class="contact-wrap">
-                <a href="#"><i class="fa fa-github"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-google"></i></a>
+                <a href="https://github.com/gemae"><i class="fa fa-github"></i></a>
+                <a href="https://www.facebook.com/gemae.batislaong/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/gerry-mae-batislaong-4a60111b2/"><i class="fa fa-linkedin"></i></a>
+                <a href="mailto: gerrymae.roxasbatislaong@gmail.com"><i class="fa fa-google"></i></a>
             </div>
         </div>
 
@@ -139,45 +152,77 @@
     </section>
 
     <section class="portfolio section" id="worksId">
+       
         <h1 class="sliders">Portfolio</h1>
-       <nav>
+       
+        <nav>
            <ul class="portfolio-list fade">
-               <li class="active" onclick="works(0)">All</li>
-               <li onclick="works(1)">Web Design</li>
-               <li onclick="works(2)">Android App</li>
+               <li id ="all" class="active" onclick="works(0)">All</li>
+               <li id="web" onclick="works(1)">Web Design</li>
+               <li id="app" onclick="works(2)">Android App</li>
            </ul>
        </nav>
+
        <div class="works-wrap" id="wrap">
-            <div class="works-tile web" id="one">
+            
+            <div class="works-tile web" id="one" onclick="pop(0,this);">
                 <div class="tile t1 sliders">
                     <img src="img/work1.jpg" alt="">
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                    </ul>
                 </div>
                 <p>Landing-Page</p>
             </div>
-            <div  class="works-tile web" id="two">
+
+            <div  class="works-tile web" id="two" onclick="pop(1,this);">
                 <div class="tile t2 sliders">
                     <img src="img/work2.jpg" alt="">
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                    </ul>
                 </div>
                 <p>DevBloom</p>
             </div>
-            <div  class="works-tile web" id="three">
+
+            <div  class="works-tile web" id="three" onclick="pop(2,this);">
                 <div class="tile t3 sliders">
                     <img src="img/work3.jpg" alt="">
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                    </ul>
                 </div>
                 <p>Publi-like twitter</p>
             </div>
-            <div class="works-tile web" id="four">
+
+            <div class="works-tile web" id="four" onclick="pop(3,this);">
                 <div class="tile t4 sliders">
                     <img src="img/work4.jpg" alt="">
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>bootsrap</li>
+                        <li>javascript</li>
+                    </ul>
                 </div>
                 <p>WegIde</p>
             </div>
-            <div  class="works-tile app" id="five">
+
+            <div  class="works-tile app" id="five" onclick="pop(4,this);">
                 <div class="tile t5 sliders">
                     <img src="img/work5.jpg" alt="">
+                    <ul>
+                        <li>Android Studio</li>
+                    </ul>
                 </div>
                 <p>E-Learning App</p>
             </div>
+
        </div>
     </section>
     <section class="email container" id="emailId">
@@ -196,10 +241,7 @@
     </section>
     <footer class="contact section" id="contactId">
         <div class="logo"><img src="style/logo.png" alt=""></div>
-        <div class="contact-wrapper">
-            <h2>Get in touch</h2>
-            
-        </div>
+
         <label for="">site by GEMAE BATISLAONG</label>
     </footer>
  <script src="main.js"></script>   

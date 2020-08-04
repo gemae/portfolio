@@ -4,9 +4,12 @@
 @import './works';
 @import './contact';
 @import './email';
+@import './modal';
+
 *{
     padding: 0;
     margin: 0;
+    outline: none;
 }
 
 body,html{

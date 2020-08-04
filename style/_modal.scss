@@ -1,0 +1,120 @@
+.modal{
+    background-color: rgba(32, 32, 32, 0.596);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    padding: 0!important;
+}
+@keyframes modalAppear{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes modalDisappear{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+.modal-wrap{
+    width: 450px;
+    height: 500px;
+    background-color: whitesmoke;
+    position: relative;
+    z-index: 9999;
+}
+.project-wrap{
+    width: 100%;
+    height: 80%;
+    position: relative;
+    .project-image{
+        width: 100%;
+        height: 100%;
+    }
+    
+    label{
+        position: absolute;
+        font-size: 2rem;
+        cursor: pointer;
+        
+        &:focus{
+            background: none;
+        outline: none;
+        }
+        img{
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    .prev{
+        left: 5px;
+        bottom: 5px;
+        
+    }
+    .next{
+        right: 5px;
+        bottom: 5px;
+        
+    }
+
+}
+.link-wrap{
+    height: 20%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: .9em;
+    .link{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        text-decoration: none;
+        font-size: .8em;
+        color: $mainFont;
+        opacity: .8;
+    }
+    .project-script{
+        position: relative;
+        width: 80%;
+        text-align: center;
+           li{
+               display: inline;
+               padding: 0 .3rem;
+           }
+       }
+}
+@media screen and (max-width: 550px){
+    .modal-wrap{
+        width: 350px;
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .modal-wrap{
+        width: 300px;
+        height: 70%;
+    }
+}
+@media screen and (max-width: 340px){
+    .modal-wrap{
+        width: 90%;
+        height: 70%;
+    }
+}

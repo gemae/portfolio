@@ -1,15 +1,21 @@
 .contact{
-    padding:.5em;
+    padding:.5em 2em;
     border-top: 1px solid $secondaryColor;
     background: $coffee;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     .logo img{
-        width: 3rem;
-        height: 3rem;
+        width: 2.5em;
+        height: 2.5em;
+    }
+    label{
+        font-size: .7em;
     }
 }
 
-.contact-wrapper{
+/*
+  .contact-wrapper{
     margin: .5rem 0 1rem 0;
     width: fit-content;
     position: relative;
@@ -45,7 +51,7 @@
         transform: translateY(-50%);
     }
 }
-
+*/
 .contact > label{
     letter-spacing: 1.3px;
     color: white;
@@ -53,7 +59,12 @@
 
 
 @media screen and (max-width: 400px){
-   .contact > label {
-       font-size: 13px;
-   }
+    .contact {
+        font-size: 13px;
+        flex-direction: column;
+        text-align: center;
+       
+       
+    }
+ 
 }

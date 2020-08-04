@@ -52,7 +52,14 @@
     background-color: rgba(177, 125, 164, 0.02);
     padding: 1rem;
     box-sizing: border-box;
-    
+    position: relative;
+}
+.works-tile ul{
+    position: absolute;
+    visibility: hidden;
+}
+.works-tile ul li{
+    list-style: none;
 }
 .works-tile p{
     padding: 1em 0;

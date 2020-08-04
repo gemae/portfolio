@@ -36,7 +36,7 @@ header {
           box-shadow: 2px 1px 5px var(--bg);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  z-index: 100;
+  z-index: 99;
   width: 100%;
   background-color: var(--bg);
   -webkit-transition: 400ms;
@@ -152,8 +152,8 @@ header {
   padding: 0 2.5em;
   position: relative;
   left: -15%;
-  -webkit-transform: translateX(25%);
-          transform: translateX(25%);
+  -webkit-transform: translateX(15%);
+          transform: translateX(15%);
 }
 
 .caption-wrap .header-caption .text1 {
@@ -203,6 +203,7 @@ header {
   color: white;
   letter-spacing: 1.5px;
   background-color: #363636;
+  padding: .1rem;
 }
 
 .contact-wrap a i {
@@ -626,7 +627,7 @@ header {
   letter-spacing: 5px;
   text-transform: uppercase;
   color: white;
-  background: #BF9F73;
+  background: #363636;
   border-radius: 30px;
 }
 
@@ -679,6 +680,7 @@ header {
 .skills-wrap > span h4 {
   position: relative;
   opacity: 0;
+  display: none;
 }
 
 .skills-wrap > span div {
@@ -720,8 +722,8 @@ header {
 
 .flexgrow div::after {
   width: var(--skills) !important;
-  -webkit-transition: 1300ms ease-out;
-  transition: 1300ms ease-out;
+  -webkit-transition: 1000ms ease-out;
+  transition: 1000ms ease-out;
 }
 
 .html {
@@ -878,6 +880,16 @@ header {
   padding: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
+}
+
+.works-tile ul {
+  position: absolute;
+  visibility: hidden;
+}
+
+.works-tile ul li {
+  list-style: none;
 }
 
 .works-tile p {
@@ -965,80 +977,87 @@ header {
 }
 
 .contact {
-  padding: .5em;
+  padding: .5em 2em;
   border-top: 1px solid rgba(250, 196, 237, 0.3);
   background: #BF9F73;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .contact .logo img {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5em;
+  height: 2.5em;
 }
 
-.contact-wrapper {
-  margin: .5rem 0 1rem 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+.contact label {
+  font-size: .7em;
 }
 
-.contact-wrapper h2 {
-  padding: .8rem 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  color: white;
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  letter-spacing: 1px;
+/*
+  .contact-wrapper{
+    margin: .5rem 0 1rem 0;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
-.contact-wrapper h2::before {
-  content: "";
-  width: 2rem;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: -2rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+.contact-wrapper h2{
+    padding: .8rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    position: relative;
+    width: fit-content;
+    letter-spacing: 1px;
+    &::before{
+        content: "";
+        width: 2rem;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: -2rem;
+        transform: translateY(-50%);
+    }
+    &::after{
+        content: "";
+        width: 2rem;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        right: -2rem;
+        transform: translateY(-50%);
+    }
 }
-
-.contact-wrapper h2::after {
-  content: "";
-  width: 2rem;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  right: -2rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
+*/
 .contact > label {
   letter-spacing: 1.3px;
   color: white;
 }
 
 @media screen and (max-width: 400px) {
-  .contact > label {
+  .contact {
     font-size: 13px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
   }
 }
 
 .email {
   width: 100%;
   padding: 5rem 2rem;
-  background-color: whitesmoke;
+  background-color: #f7f7f7;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -1128,9 +1147,176 @@ form input[type=submit]:hover {
   }
 }
 
+.modal {
+  background-color: rgba(32, 32, 32, 0.596);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  padding: 0 !important;
+}
+
+@-webkit-keyframes modalAppear {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes modalAppear {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes modalDisappear {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes modalDisappear {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+.modal-wrap {
+  width: 450px;
+  height: 500px;
+  background-color: whitesmoke;
+  position: relative;
+  z-index: 9999;
+}
+
+.project-wrap {
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+
+.project-wrap .project-image {
+  width: 100%;
+  height: 100%;
+}
+
+.project-wrap label {
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.project-wrap label:focus {
+  background: none;
+  outline: none;
+}
+
+.project-wrap label img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.project-wrap .prev {
+  left: 5px;
+  bottom: 5px;
+}
+
+.project-wrap .next {
+  right: 5px;
+  bottom: 5px;
+}
+
+.link-wrap {
+  height: 20%;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  font-size: .9em;
+}
+
+.link-wrap .link {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  text-decoration: none;
+  font-size: .8em;
+  color: #363636;
+  opacity: .8;
+}
+
+.link-wrap .project-script {
+  position: relative;
+  width: 80%;
+  text-align: center;
+}
+
+.link-wrap .project-script li {
+  display: inline;
+  padding: 0 .3rem;
+}
+
+@media screen and (max-width: 550px) {
+  .modal-wrap {
+    width: 350px;
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .modal-wrap {
+    width: 300px;
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .modal-wrap {
+    width: 90%;
+    height: 70%;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
+  outline: none;
 }
 
 body, html {

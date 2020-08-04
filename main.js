@@ -34,9 +34,10 @@ const startSlide = () => {
         slide.style.transition = "600ms ease-out";
     }, interval);
 }
-slide.addEventListener("transitionend", ()=>{
+slide.addEventListener("transitionend", (event)=>{
+    event.preventDefault();
     slides = document.querySelectorAll(" .slide");
-    if(slides[counter].id === firstClone.id){
+    if(slides[counter].id == firstClone.id){
         slide.style.transition = "none";
         counter = 0;
         btnActive();
@@ -103,61 +104,6 @@ function currentNav(cur,li){
     cur[0].className = cur[0].className.replace("active-main-nav","");
     li.className += "active-main-nav";
 }
-
-
-/*//naigation set link based on scrolled height
-const body = document.querySelector("body");
-const home = document.querySelector(".home");
-const aboutMe = document.querySelector(".about-me");
-const work = document.querySelector(".portfolio");
-const contact = document.querySelector(".email");
-
-
-window.onscroll = function() {
-let bodyH  = body.clientHeight;
-let homeH = home.clientHeight;
-let aboutMeH = aboutMe.clientHeight;
-let emailH = contact.clientHeight
-//let forLast = bodyH-window.innerHeight;
-let scrollHeight = window.pageYOffset;
-headH = home.clientHeight;
-
-    if(scrollHeight >= homeH-60 & scrollHeight < homeH+aboutMeH){
-        currentNav(cur,listNav[1]);
-    }else if(scrollHeight >= aboutMeH+homeH & scrollHeight < aboutMeH+homeH+emailH){
-        currentNav(cur,listNav[2]);
-    }
-    else if(scrollHeight >= aboutMeH+homeH+emailH){
-        currentNav(cur,listNav[3]);
-    }
-    else{
-        currentNav(cur,listNav[0]);
-    }
- 
-};
-//Navigation intersection
-var headH = home.clientHeight;
-const body = document.querySelector("body");
-const nav = document.querySelector(".main-nav");
-const sectionTwo = document.querySelector(".about-me");
-const sectionTwoOptions = {
-
-    rootMargin: `0px 0px -${headH}px 0px`
-};
-const sectionTwoObserver = new IntersectionObserver((entries,sectionTwoObserver) => {
-entries.forEach(entry =>{
-    if(entry.isIntersecting){
-        nav.classList.add('newScrolled');
-       
-    }else{
-        nav.classList.remove('newScrolled');
-       
-    }
-})
-},sectionTwoOptions);
-
-sectionTwoObserver.observe(sectionTwo);*/
-
 //navigation set link based on scrolled height
 const body = document.querySelector("body");
 const home = document.querySelector(".home");
@@ -192,30 +138,6 @@ headH = home.clientHeight;
     }
  
 };
-//observer for main containers
-/*
-const containers = document.querySelectorAll(".container");
-var windowH = window.innerHeight;
-const containersOptions = {
-    rootMargin: `0px 0px -${windowH-100}px 0px`
-
-};
-const containerObserver = new IntersectionObserver((entries,cotainerObserver) => {
-    
-    entries.forEach(entry =>{
-       if(!entry.isIntersecting){
-        nav.classList.remove("newScrolled"); 
-       }else{
-        nav.classList.add("newScrolled");
-       }
-    });
-    
-},containersOptions);
-
-containers.forEach(container => {
-    containerObserver.observe(container);
-});
-*/
 //home observer hiding navaigation
 const sectionOne = document.querySelector(".home");
 const sectionOneOptions = {
@@ -275,3 +197,101 @@ function skillsFlex(index,skill){
         skills[index].classList.add("flexgrow");
         skillwrap.style.setProperty('--skills',skill);
 }
+
+//MODAL
+const modal = document.querySelector(".modal");
+let worksTile = document.querySelectorAll(".works-tile");
+const projectImage = document.querySelector(".project-image");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let ctr = 0;
+var newArr = [];
+var imgArr = [];
+var projectTool = [];
+var toolList = [];
+var tileClicked;
+const modalDisappear = "modalDisappear 300ms ease-in-out";
+const modalAppear = "modalAppear 600ms ease-in-out";
+const pop =  (ind,self)=> {
+    let scrollHeight = window.pageYOffset;
+    worksTile[ind].style.animation = modalDisappear;
+    worksTile[ind].style.animationFillMode = "forwards";
+    modal.style.animation = modalAppear;
+    modal.style.display = "flex";
+    modal.style.top = `${scrollHeight}px`;
+    tileClicked = ind;
+    let activeWorks = document.querySelectorAll(".works-wrap .works-tile");
+    var image = $(`#${self.id}`).find("img").attr('src');
+    insertTool(self);
+    workSlider(activeWorks,image);
+}
+const insertTool = (s) => {
+    $("#tool").find("ul").append($(`#${s.id}`).find("ul li").clone());
+    bodyNoScroll();
+}
+const toolClear = () => {
+    $("#tool").find("ul li").remove();
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.animation = modalDisappear;
+        modal.style.animationFillMode = "forwards";
+        worksTile[tileClicked].style.animation = modalAppear;
+        worksTile[tileClicked].style.animationFillMode = "forwards";
+        ctr = 0;
+        bodyWithScroll();
+        toolClear();
+    }
+  }
+
+const workSlider = (workArray,img) => {
+    newArr = [];
+    imgArr = [];
+    listArr = [];
+    workArray.forEach(e => {
+        if($(`#${e.id}`).is(":visible")){
+            newArr.push(e);
+        }
+    });
+    newArr.forEach(e => {
+        imgArr.push($(`#${e.id}`).find("img").attr('src'));
+          });
+    projectImage.setAttribute('src',img);
+    ctr = imgArr.indexOf(img);
+}
+
+nextBtn.addEventListener("click", ()=>{
+    toolClear();
+    ctr++;
+    if(ctr < imgArr.length){
+    changeImg(ctr);
+    }
+    else{
+        ctr = 0;
+        changeImg(ctr);
+    }
+    insertTool(newArr[ctr]);
+   
+});
+
+prevBtn.addEventListener("click", ()=>{
+    toolClear();
+    ctr--;
+    if(ctr >= 0){
+        changeImg(ctr);
+    }
+    else{
+        ctr = imgArr.length-1;
+        changeImg(ctr);
+    }
+    insertTool(newArr[ctr]);
+  
+});
+
+const html = document.querySelector("html");
+const changeImg = (ctr) => {
+    projectImage.setAttribute('src',imgArr[ctr]);
+}
+const bodyNoScroll = () => {html.style.overflowY = "hidden"};
+const bodyWithScroll = () => {html.style.overflowY = "visible"};
+

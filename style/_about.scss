@@ -207,10 +207,8 @@
     letter-spacing: 5px;
     text-transform: uppercase;
     color: white;
-    background:$coffee;
+    background:$mainFont;
     border-radius: 30px;
-    // #b38f18ee;
-   // color: rgba(117, 19, 93,0.7);
 }
 .skills-wrap{
     width: 100%;
@@ -244,6 +242,7 @@
     h4{
         position: relative;
         opacity: 0;
+        display: none;
     }
     div{
         width: 90%;
@@ -279,8 +278,7 @@
     }
     div::after{
         width: var(--skills)!important;
-     
-        transition: 1300ms ease-out;
+        transition: 1000ms ease-out;
     }
 }
 
