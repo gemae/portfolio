@@ -254,20 +254,13 @@ header{
 }
 
 @media screen and (max-width: 750px){
+   
+ 
+}
+@media screen and (max-width: 450px){
     .caption-wrap{
         font-size: 10px;
     }
-    .contact-wrap a{
-        width: 2rem;
-        height: 2rem;
-    }
-    .contact-wrap a i{
-        font-size: 3em;
-      
-    }
-
-}
-@media screen and (max-width: 450px){
     header{
         font-size: 13px;
     }
@@ -275,8 +268,5 @@ header{
        font-size: 4em!important;
        letter-spacing: 1px!important;
    }
-   .header-caption{
-    left: -50%!important;
-    transform: translateX(50%)!important;
-   }
+   
 }

@@ -24,7 +24,6 @@
 
 .email form *{
    display: block;
-   
 }
 form{
     width: 600px;  
@@ -33,9 +32,10 @@ form{
 }
 
 form input[type=email], input[type=text], textarea{
-     width: 100%;
+    width: 100%;
     padding: .5rem;
     box-sizing: border-box;
+    border: 1px solid whitesmoke;
 }
 form input,textarea{
     margin: .5rem 0rem 1rem 0rem;
@@ -44,16 +44,23 @@ form textarea{
     height: 150px;
     width: 100%;
 }
-form input[type=submit]{
+
+fieldset{
+    border: none;
+}
+.inline em{
+    display: inline!important;
+}
+button{
     padding: .4rem 1.3rem;
     background-color: $mainFont;
     color: $coffee;
     font-size: 1.1rem;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: pointer ;
 }
-form input[type=submit]:hover{
+button:hover{
    background-color:$coffee;
    color: white;
   
