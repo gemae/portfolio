@@ -7,6 +7,7 @@ header{
     color: $mainFont;
     --bg:rgb(54, 54, 54);
     --link: #BF9F73;
+    
 }
 .home{
     position: relative;
@@ -32,8 +33,9 @@ header{
         }
         .logo img{
            
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2.6rem;
+            height: 2.6rem;
+          
         }
     ul{
       
@@ -247,8 +249,8 @@ header{
         .logo img{
          
             margin-top: 0;
-            width: 3rem!important;
-            height: 3rem!important;
+            width: 3.2rem!important;
+            height: 3.2rem!important;
         }
  }
 }

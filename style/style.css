@@ -49,8 +49,8 @@ header {
 }
 
 .home nav .logo img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.6rem;
+  height: 2.6rem;
 }
 
 .home nav ul {
@@ -308,8 +308,8 @@ header {
   }
   .main-nav .logo img {
     margin-top: 0;
-    width: 3rem !important;
-    height: 3rem !important;
+    width: 3.2rem !important;
+    height: 3.2rem !important;
   }
 }
 
@@ -727,13 +727,13 @@ header {
 }
 
 .bootstrap {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, var(--fade1)), to(rgba(48, 21, 48, 0.767))), url("img/bootsrap.png");
-  background-image: linear-gradient(to bottom, var(--fade1) 40%, rgba(48, 21, 48, 0.767)), url("img/bootsrap.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, var(--fade1)), to(rgba(48, 21, 48, 0.767))), url("img/bootstrap.png");
+  background-image: linear-gradient(to bottom, var(--fade1) 40%, rgba(48, 21, 48, 0.767)), url("img/bootstrap.png");
 }
 
 .javascript {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, var(--fade1)), to(rgba(197, 197, 31, 0.753))), url("img/js.png");
-  background-image: linear-gradient(to bottom, var(--fade1) 40%, rgba(197, 197, 31, 0.753)), url("img/js.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, var(--fade1)), to(rgba(197, 197, 31, 0.753))), url("img/js.jpg");
+  background-image: linear-gradient(to bottom, var(--fade1) 40%, rgba(197, 197, 31, 0.753)), url("img/js.jpg");
 }
 
 .jquery {
@@ -742,8 +742,8 @@ header {
 }
 
 .react {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, var(--fade1)), to(rgba(130, 130, 255, 0.733))), url("img/reactjs.png");
-  background-image: linear-gradient(to bottom, var(--fade1) 60%, rgba(130, 130, 255, 0.733)), url("img/reactjs.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, var(--fade1)), to(rgba(130, 130, 255, 0.733))), url("img/react.png");
+  background-image: linear-gradient(to bottom, var(--fade1) 60%, rgba(130, 130, 255, 0.733)), url("img/react.png");
 }
 
 @media screen and (max-width: 654px) {
@@ -977,8 +977,8 @@ header {
 }
 
 .contact .logo img {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.6em;
+  height: 2.6em;
 }
 
 .contact label {

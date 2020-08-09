@@ -112,6 +112,7 @@ const aboutMe = document.querySelector(".about-me");
 const work = document.querySelector(".portfolio");
 const contact = document.querySelector(".email");
 const nav = document.querySelector(".main-nav");
+const logo = document.querySelector("logo")
 
 window.onscroll = function() {
 let workH  = work.clientHeight;
@@ -125,20 +126,32 @@ headH = home.clientHeight;
     if(scrollHeight >= homeH-150 & scrollHeight < homeH+aboutMeH-150){
         currentNav(cur,listNav[1]);
         nav.classList.add("newScrolled");
+        logo2();
+      
     }else if(scrollHeight >= aboutMeH+homeH-150 & scrollHeight < aboutMeH+homeH+workH-150){
         currentNav(cur,listNav[2]);
         nav.classList.remove("newScrolled"); 
+        logo1();
     }
     else if(scrollHeight >= workH+aboutMeH+homeH-150){
         currentNav(cur,listNav[3]);
         nav.classList.add("newScrolled");
+        logo2();
     }
     else{
         currentNav(cur,listNav[0]);
         nav.classList.remove("newScrolled"); 
+        logo1();
     }
- 
+  
 };
+
+function logo1(){
+  $("#logo").find("img").attr("src","style/logo222.png");
+}
+function logo2(){
+  $("#logo").find("img").attr("src","style/logo111.png");
+}
 //home observer hiding navaigation
 const sectionOne = document.querySelector(".home");
 const sectionOneOptions = {
